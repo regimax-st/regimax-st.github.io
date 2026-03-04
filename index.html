@@ -20,6 +20,7 @@
         <a href="#about">소개</a>
         <a href="#story">스토리</a>
         <a href="#demo">데모</a>
+        <a href="#dashboard">대시보드</a>
         <a href="#how">작동 방식</a>
         <a href="#risk">리스크</a>
         <a href="#stack">스택</a>
@@ -240,6 +241,68 @@
         </div>
       </div>
     </section>
+
+    
+    <!-- DASHBOARD -->
+    <section class="section" id="dashboard">
+      <div class="container">
+        <h2 class="h2">실시간 대시보드 (Public)</h2>
+        <p class="lead">
+          VPS에서 구동 중인 RegiMax 대시보드 API에서 상태를 가져와 주기적으로 갱신합니다.
+          (데모 목적 / 투자 권유 아님)
+        </p>
+
+        <div class="grid3" style="margin-bottom:14px">
+          <div class="card">
+            <h3>상태(Heartbeat)</h3>
+            <p class="muted" style="margin:0">마지막 업데이트</p>
+            <div style="font-weight:900; font-size:18px; margin-top:6px" id="db_updated">-</div>
+            <p class="muted" style="margin:6px 0 0">지연: <span id="db_lag">-</span></p>
+          </div>
+
+          <div class="card">
+            <h3>잔고 / 누적 PnL</h3>
+            <p class="muted" style="margin:0">현재 잔고 / 기준</p>
+            <div style="font-weight:900; font-size:18px; margin-top:6px">
+              <span id="db_balance">-</span> <span class="muted">/</span> <span id="db_baseline">-</span>
+            </div>
+            <p class="muted" style="margin:6px 0 0">PnL: <span id="db_pnl">-</span></p>
+          </div>
+
+          <div class="card">
+            <h3>포지션</h3>
+            <p class="muted" style="margin:0">현재 포지션</p>
+            <div style="font-weight:900; font-size:18px; margin-top:6px" id="db_pos">-</div>
+            <p class="muted" style="margin:6px 0 0">엔트리/SL: <span id="db_entry_sl">-</span></p>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3>전략 모드 / 마지막 신호</h3>
+            <p class="muted" style="margin:0">Mode</p>
+            <div style="font-weight:900; font-size:18px; margin-top:6px" id="db_mode">-</div>
+            <p class="muted" style="margin:6px 0 0">마지막 신호: <span id="db_last_signal">-</span></p>
+            <p class="muted" style="margin:6px 0 0">심볼: <span id="db_symbol">-</span></p>
+          </div>
+
+          <div class="card">
+            <h3>최근 알림 (Feed)</h3>
+            <p class="muted" style="margin:0 0 10px">최근 10개 메시지</p>
+            <div id="db_feed" class="muted">불러오는 중...</div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:16px">
+          <div class="callout__title">API 엔드포인트</div>
+          <div class="callout__desc">
+            status: <span class="inline-code" id="db_api_status">-</span><br/>
+            feed: <span class="inline-code" id="db_api_feed">-</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- RISK -->
 <section class="section section--alt" id="risk">
